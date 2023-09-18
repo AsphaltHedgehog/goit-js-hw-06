@@ -13,16 +13,11 @@ const images = [
   },
 ];
 
-const listOfGalleryEl = document.querySelector(".gallery")
-console.log(listOfGalleryEl);
+const listOfGalleryEl = document.querySelector(".gallery");
+const elArray = [];
 
-const addImgList = images.forEach((el, i) => {
-  let newEl;
-  el = document.createElement("li");
-  newEl = document.createElement("img");
-  newEl.setAttribute("src", images[i].url);
-  newEl.setAttribute("alt", images[i].alt);
-  el.append(newEl);
-  listOfGalleryEl.insertAdjacentHTML("beforeend", el)
+images.forEach((el, ) => {
+  elArray.push(`<li><img height=400 src="${el.url}" alt="${el.alt}"></li>`);
 });
 
+listOfGalleryEl.insertAdjacentHTML("beforeend", elArray.join(""));
